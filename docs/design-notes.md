@@ -21,8 +21,17 @@ Setup: installed at local scope into a scratch folder; a fresh desktop-app sessi
 - Gaps found in the procedures and fixed in 0.1.0 (commit "fix: procedures after first live test"): session list covers every folder; no check for the start-session limit before trying; an empty section was left behind when the session could not open; ambiguity about "install only" scope, placeholders, the ID of the first workstream, templates location, priority, file-name slug, localized section names.
 - Not fixed, noted: the test answered its own confirmation questions because the brief told it to, so waiting for a real answer is untested.
 
+## Second live test, typed by the user (2026-10-30)
+
+The user typed the requests in a clean session in the scratch folder. Read from that session's transcript and checked against the app's session list and the files on disk.
+
+- Confirmed: the skill fired on a typed new-task request, read only `new.md`, showed a plan, and waited for the user's real answer before creating anything.
+- Confirmed: with the user's typed answer, the app allowed the lead session to be opened, detached from the opener, and filed into a new sidebar section (read back: detached, parent was the test session, section matched).
+- Confirmed: status reported per workstream and noticed the ledger still showed the workstream active after the lead had finished it.
+- Confirmed: close read the files itself before asking to archive, asked before archiving or removing the section, and offered archive, not delete.
+- Gaps fixed: IDs were planned as `W1` then written `W-01` (format now stated); with no `memory-bank/`, new skipped installing the rules, so the lead session ran without them in `CLAUDE.md` (new now includes the install steps); new reported the session as placed before reading it back (now reads it back).
+- Still untested: promote and handover, a project that already has many sessions (init with a real session list), and a second workstream.
+
 ## Not yet checked
 
-- Whether session start, detach, and move to section work when the user typed the request in that session (the sidebar section creation worked).
-- Whether the skill waits for a real answer at each confirmation.
 - Headless `claude -p` here is not logged in, so tests run in a desktop-app session.
