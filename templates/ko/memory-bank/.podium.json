@@ -1,0 +1,5 @@
+{
+  "idPrefix": "W",
+  "ledgerPath": "memory-bank/sessions.md",
+  "maxWorkSessions": 4
+}
