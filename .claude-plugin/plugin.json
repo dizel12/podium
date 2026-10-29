@@ -1,0 +1,5 @@
+{
+  "name": "podium",
+  "version": "0.1.0",
+  "description": "Run many Claude Code sessions without losing track: one workstream per area, one session per task, context kept in files."
+}
