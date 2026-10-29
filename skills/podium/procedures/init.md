@@ -5,7 +5,7 @@ Goal: install the memory-bank and the session rules, and if the project already 
 ## 1. Check what exists
 - If `memory-bank/progress.md` and the ledger already exist, podium is installed. Tell the user and run `status.md` instead.
 - Read the project `CLAUDE.md` (if any) and a list of the docs folder. Note existing rules so you do not contradict them.
-- If you have session tools, list the sessions: title, folder, section, who opened it, whether it is running.
+- If you have session tools, list the sessions and keep only those in this project's folder: title, section, who opened it, whether it is running. Sessions from other folders belong to other projects; leave them alone.
 
 ## 2. Pick the case
 - No sessions or a brand-new project: plan to install only (files and rules).
@@ -19,14 +19,14 @@ Show the user, briefly:
 - What you could not tell from titles alone; ask about those, at most three questions.
 Do not invent workstreams the sessions do not support. Prefer fewer sections.
 
-Ask: **Proceed / Adjust / Install rules and folders only.**
+Ask: **Proceed / Adjust / Install rules and folders only.** "Install rules and folders only" means steps 1 and 2 below; steps 3 to 5 are skipped, and the copied files keep their placeholders until a workstream is started.
 
 ## 4. On a yes, in this order
-1. Copy the templates into `memory-bank/` (skip any file that exists): `activeContext.md`, `progress.md`, the ledger, `workstreams/_template.md`, `worklog/_template.md`, `.podium.json`.
-2. Append the session rules (`templates/session-rules.md`, or `templates/ko/session-rules.md`) to the end of the project `CLAUDE.md`. Create `CLAUDE.md` if there is none.
+1. Copy the templates (from this plugin's `templates/`, see the skill's rules) into `memory-bank/` (skip any file that exists): `activeContext.md`, `progress.md`, the ledger, `workstreams/_template.md`, `worklog/_template.md`, `.podium.json`.
+2. Append the session rules (`templates/session-rules.md`, or `templates/ko/session-rules.md`) to the end of the project `CLAUDE.md`, starting at the first `##` heading: leave out the paragraph addressed to the person pasting it. Create `CLAUDE.md` if there is none.
 3. Write one entry per workstream into `progress.md` with new IDs (`<idPrefix>-01`, `-02`, ...). Create each workstream file from the template with what you actually know; leave the rest as open items.
 4. Fill the ledger: sections, active sessions, roles.
-5. With session tools: create the sidebar sections and move sessions into them. Sessions nested under another session move with it; detach is possible only for sessions you opened. If a move is refused, list those sessions with the manual steps and carry on with the rest.
+5. With session tools: create the sidebar sections and move sessions into them. This changes the user's sidebar, so it is only done after the "Proceed" answer. Sessions nested under another session move with it; detach is possible only for sessions you opened. If a move is refused, list those sessions with the manual steps and carry on with the rest.
 
 ## 5. Report
 One short list: created, moved, skipped and why. Say what the user must do by hand. Remind them that new work now starts by telling you the task.
