@@ -1,0 +1,14 @@
+{
+  "name": "podium",
+  "description": "podium: keep many Claude Code sessions organized by workstream",
+  "owner": {
+    "name": "stlahxm"
+  },
+  "plugins": [
+    {
+      "name": "podium",
+      "source": "./",
+      "description": "One sidebar section per workstream, one session per task, context kept in files."
+    }
+  ]
+}
