@@ -40,8 +40,9 @@ After it is published the first command will take a GitHub `owner/repo` instead 
 
 ## What you get
 
-- One skill, `podium`, and seven procedures it picks from: set up a project, start a workstream, status, split or promote, close, clean up finished sessions in one pass, and replace a long session. There are no commands to memorize; you ask in plain sentences such as "make this a workstream", "how are things", "close this workstream", "clean up finished sessions".
+- One skill, `podium`, and nine procedures it picks from: set up a project, start a workstream, status, split or promote, close, clean up finished sessions in one pass, find where something was decided, verify finished work with a separate session, and replace a long session. There are no commands to memorize; you ask in plain sentences such as "make this a workstream", "how are things", "close this workstream", "clean up finished sessions", "where did we decide the caching approach?".
 - Templates for the files that keep context (`memory-bank/`) and a short rules section for your `CLAUDE.md` (about 370 words, roles, splitting, file ownership, reporting, approval) so every session in the project knows podium exists, in English and Korean. The full rules are in [docs/rules.md](docs/rules.md).
+- A template for shared tool sessions such as a read-only data lookup (`templates/tool-session.md`).
 - Two fictional examples under `examples/`: a software feature and a move.
 
 ## How it keeps cost low
