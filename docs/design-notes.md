@@ -32,6 +32,15 @@ The user typed the requests in a clean session in the scratch folder. Read from 
 - Gaps fixed: IDs were planned as `W1` then written `W-01` (format now stated); with no `memory-bank/`, new skipped installing the rules, so the lead session ran without them in `CLAUDE.md` (new now includes the install steps); new reported the session as placed before reading it back (now reads it back).
 - Still untested: promote and handover, a project that already has many sessions (init with a real session list), and a second workstream.
 
+## Fire test with five ordinary phrasings (2026-11-01)
+
+Setup: one session in the scratch folder was given five prompts in one brief and asked to report whether the skill fired. Weak evidence: the subject knew it was a podium test, all prompts came in one message, and the folder had no podium files. Only the first skill call is visible in the transcript; the other decisions are the subject's own report.
+
+- Fired as intended: "too many sessions" (tidy), "refactoring is done, let's wrap up" (close).
+- Did not fire: a new feature request ("build a sign-up screen by next month"), a non-code planning request ("plan a trip, help me get organized"), and an unrelated explanation request (correct).
+- Findings: the description did not signal that non-code or multi-session work counts, so the trip request was treated as unrelated; the sign-up request was borderline; "wrap up" could mean finishing code; "too many sessions" fits both init and tidy.
+- Changes made, not yet retested: description now says work spanning several sessions or steps, code or not; `new` skips small one-conversation tasks; `close` first checks what "wrap up" means; init vs tidy told apart in the skill table.
+
 ## Not yet checked
 
 - Headless `claude -p` here is not logged in, so tests run in a desktop-app session.
