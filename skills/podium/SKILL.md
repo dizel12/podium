@@ -1,6 +1,6 @@
 ---
 name: podium
-description: Use when the user asks to start a new workstream or task area, restructure many sessions, clean up finished sessions, check status across workstreams, close a workstream, or hand a long session over to a new one.
+description: Use when the user asks to start a new workstream or task area, restructure many sessions, clean up finished sessions or the user says sessions are piling up, check status across workstreams, close a workstream, or hand a long session over to a new one.
 ---
 
 # podium
@@ -15,7 +15,7 @@ Read only the procedure that matches the situation. Do not read the others.
 | User asks what is going on across workstreams | procedures/status.md |
 | A workstream grows and needs sub-sessions | procedures/promote.md |
 | A workstream is finished | procedures/close.md |
-| Finished or unneeded sessions pile up and should be cleared in one pass | procedures/tidy.md |
+| Finished or unneeded sessions pile up, the user says there are too many, or asks to clear them in one pass | procedures/tidy.md |
 | A long session should be replaced by a fresh one | procedures/handover.md |
 
 ## Rules for every procedure
@@ -23,7 +23,7 @@ Read only the procedure that matches the situation. Do not read the others.
 - Talk to the user in the language they use. Keep file names, paths, and commands as they are.
 - When a decision is needed, ask one question with a few options and a recommended first option. Use the choice-question tool if your tools have one; otherwise list the options in plain text. Do not decide for the user, and wait for the answer.
 - Never create or move sessions, edit the user's `CLAUDE.md`, or archive anything before showing the plan and getting a yes.
-- Read settings from `memory-bank/.podium.json` (`idPrefix`, `ledgerPath`, `maxWorkSessions`). If the file is missing, use `W`, `memory-bank/sessions.md`, `4`.
+- Read settings from `memory-bank/.podium.json` (`idPrefix`, `ledgerPath`, `maxWorkSessions`, `idleDays`). If the file is missing, use `W`, `memory-bank/sessions.md`, `4`, `14`.
 - Templates live in this plugin: `<skill directory>/../../templates/` (English) and `.../templates/ko/` (Korean). The skill directory is shown when the skill loads; do not rely on `CLAUDE_PLUGIN_ROOT`, it may be unset. Use the one that matches the user's language. Never overwrite a file that already exists.
 - Never write secrets (passwords, keys, tokens) into any file.
 

@@ -1,5 +1,6 @@
 {
   "idPrefix": "W",
   "ledgerPath": "memory-bank/sessions.md",
-  "maxWorkSessions": 4
+  "maxWorkSessions": 4,
+  "idleDays": 14
 }
