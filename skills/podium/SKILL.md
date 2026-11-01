@@ -1,6 +1,6 @@
 ---
 name: podium
-description: Use when the user asks to start a new workstream or task area, tidy or restructure many sessions, check status across workstreams, close a workstream, or hand a long session over to a new one.
+description: Use when the user asks to start a new workstream or task area, restructure many sessions, clean up finished sessions, check status across workstreams, close a workstream, or hand a long session over to a new one.
 ---
 
 # podium
@@ -15,6 +15,7 @@ Read only the procedure that matches the situation. Do not read the others.
 | User asks what is going on across workstreams | procedures/status.md |
 | A workstream grows and needs sub-sessions | procedures/promote.md |
 | A workstream is finished | procedures/close.md |
+| Finished or unneeded sessions pile up and should be cleared in one pass | procedures/tidy.md |
 | A long session should be replaced by a fresh one | procedures/handover.md |
 
 ## Rules for every procedure

@@ -2,7 +2,7 @@
 
 [한국어](README.ko.md)
 
-**Status: designed and written, not yet tested in live sessions. Version 0.1.0, not published.**
+**Status: written and tested in live sessions for set-up, new workstream, status, and close; splitting, replacing a long session, and cleaning up are not yet tested. Version 0.1.0, not published.**
 
 ## What is this?
 
@@ -40,7 +40,7 @@ After it is published the first command will take a GitHub `owner/repo` instead 
 
 ## What you get
 
-- One skill, `podium`, and six procedures it picks from: set up a project, start a workstream, status, split or promote, close, and replace a long session. You do not memorize commands.
+- One skill, `podium`, and seven procedures it picks from: set up a project, start a workstream, status, split or promote, close, clean up finished sessions in one pass, and replace a long session. You do not memorize commands.
 - Templates for the files that keep context (`memory-bank/`) and a rules section for your `CLAUDE.md`, in English and Korean.
 - Two fictional examples under `examples/`: a software feature and a move.
 
@@ -57,7 +57,7 @@ Only the skill's one-line description is in context on every turn. The procedure
 - Creating sessions and filing them into sidebar sections uses the desktop app's session tools. In a plain terminal, podium still sets up the files and rules and gives you briefs to paste, but you open sessions yourself.
 - A session can open new sessions only when you typed a request in that session, and only the session that opened another can detach it. podium works around this by opening each workstream's lead session first and having you split from inside it.
 - podium does not say how a session should do its work (coding style, tests, writing). Keep that in your own `CLAUDE.md`.
-- Not yet verified in live sessions: that the skill reads only the matching procedure, stays quiet on small questions, and can call the app's session tools. See [docs/design-notes.md](docs/design-notes.md).
+- Verified in live sessions (see [docs/design-notes.md](docs/design-notes.md)): the skill reads only the matching procedure, stays quiet on small questions, waits for your answer, and can open and file a lead session when you typed the request. Not yet verified: splitting, replacing a long session, cleaning up, a project with many existing sessions.
 
 ## Similar projects
 
