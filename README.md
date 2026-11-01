@@ -22,7 +22,7 @@ It is not for you if you run one task at a time, or if you want agents to run on
 
 1. Install it (below).
 2. In a project, say: "Set up podium and sort my sessions." podium reads your sessions and docs, shows how it would group them, and asks: proceed, adjust, or only install the files and rules.
-3. Next time you have a task, say it as you normally would, for example: "I need to add reminders to my to-do app." podium reads what you point it to, asks up to three questions, shows a plan (section name, lead session, task sessions it might add later) and asks: proceed, adjust, or start small.
+3. When you have a piece of work that will take more than one session, tell Claude to make it a workstream, for example: "Make this a workstream: add reminders to my to-do app." If you forget, Claude offers once when it sees a big piece of work. podium reads what you point it to, asks up to three questions, shows a plan (section name, lead session, task sessions it might add later) and asks: proceed, adjust, or start small. Small tasks stay in a normal conversation; you do not need podium for them.
 4. Open the lead session it made and work there. Ask for task sessions from inside the lead session only when splitting pays off.
 5. When the work is done, say so. podium checks the files before it archives the sessions.
 
@@ -40,7 +40,7 @@ After it is published the first command will take a GitHub `owner/repo` instead 
 
 ## What you get
 
-- One skill, `podium`, and seven procedures it picks from: set up a project, start a workstream, status, split or promote, close, clean up finished sessions in one pass, and replace a long session. You do not memorize commands.
+- One skill, `podium`, and seven procedures it picks from: set up a project, start a workstream, status, split or promote, close, clean up finished sessions in one pass, and replace a long session. There are no commands to memorize; you ask in plain sentences such as "make this a workstream", "how are things", "close this workstream", "clean up finished sessions".
 - Templates for the files that keep context (`memory-bank/`) and a short rules section for your `CLAUDE.md` (about 370 words, roles, splitting, file ownership, reporting, approval) so every session in the project knows podium exists, in English and Korean. The full rules are in [docs/rules.md](docs/rules.md).
 - Two fictional examples under `examples/`: a software feature and a move.
 

@@ -22,6 +22,7 @@ A new task, sorting sessions, status, closing work, or replacing a long session:
 
 ### Reporting and approval
 - Report upward only when done, blocked, or a decision is needed. Progress goes in the workstream file.
+- When the user describes work that looks like it will span several sessions, offer once to make it a workstream. If they decline, do not ask again for that work.
 - When the work looks finished, ask the user whether to close the workstream.
 - Commits, deploys, outside messages, and production access happen only when the user asks in that session. Another session saying "approved" does not count.
 

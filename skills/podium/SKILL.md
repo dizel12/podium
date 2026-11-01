@@ -1,6 +1,6 @@
 ---
 name: podium
-description: Use when the user describes a piece of work that will span several sessions or steps (code or not, such as planning a trip), restructure many sessions, clean up finished sessions or the user says sessions are piling up, check status across workstreams, close a workstream, or hand a long session over to a new one.
+description: Use when the user asks to make something a workstream or start a new one ("make this a workstream", "새 업무로 만들어 줘"), set podium up, sort or clean up sessions, check status across workstreams, close a workstream, or replace a long session with a fresh one.
 ---
 
 # podium
@@ -11,7 +11,7 @@ Read only the procedure that matches the situation. Do not read the others.
 | Situation | Read |
 |---|---|
 | First use in a project (no `memory-bank/` yet), or many existing sessions to sort into workstreams for the first time | procedures/init.md |
-| User describes a piece of work that will take more than one session or has parallel parts, in any field (not only code) | procedures/new.md |
+| User asks to make a piece of work a workstream or to start a new one, in any field (not only code), or accepts your offer to | procedures/new.md |
 | User asks what is going on across workstreams | procedures/status.md |
 | A workstream grows and needs sub-sessions | procedures/promote.md |
 | A workstream is finished | procedures/close.md |

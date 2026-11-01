@@ -3,7 +3,7 @@
 Goal: turn a task the user describes into a workstream with a section, a workstream file, and one lead session. Analyze first, show the split, and only then create anything.
 
 ## Before anything: is this worth a workstream?
-If the request is one small task that fits in this conversation (fix a bug, explain something, a quick edit), do not start a workstream. Just help, and mention podium only if the user seems to be juggling several pieces of work. A workstream is for work that will take more than one session or has parts that run in parallel. When it is borderline, ask once: keep it in this conversation, or make it a workstream.
+The user asked for a workstream, so honor it. Only if the work is clearly one small task that fits in this conversation, say so in one line and ask once: keep it in this conversation, or make it a workstream anyway. A workstream is for work that will take more than one session or has parts that run in parallel.
 
 ## 0. Is podium installed here?
 If `memory-bank/` does not exist, this is a first use. Say so in the plan and include the init install steps (copy the templates, append the session rules to `CLAUDE.md`) in what you will create, so the lead session works under the rules. Do not skip the rules just because the user only described a task.
