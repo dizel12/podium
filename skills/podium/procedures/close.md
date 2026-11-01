@@ -2,6 +2,9 @@
 
 Goal: make sure the result is in files, then retire the sessions. Do not trust a "done" report until the files show it.
 
+## First check what the user means
+"Wrap up" or "finish" may mean finishing the code (commit, pull request) rather than closing a workstream. If `memory-bank/` does not exist or no workstream matches, do not run this procedure: ask which one the user means.
+
 ## Steps
 1. Ask the lead (or manager) session to finalize: write `worklog/<date>_<topic>.md`, set its `progress.md` entry to done with the finish date, and bring its workstream file up to date. Tell it not to start new work, and to report in one line when finished. With a manager, tell it to leave any sub-session you want to keep alone.
 2. When it reports, read the files yourself: the worklog exists, the `progress.md` entry says done, the workstream file's "Current state" matches the outcome. If something is missing, say what and ask the session to fix it.

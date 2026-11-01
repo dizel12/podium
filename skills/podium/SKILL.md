@@ -1,6 +1,6 @@
 ---
 name: podium
-description: Use when the user asks to start a new workstream or task area, restructure many sessions, clean up finished sessions or the user says sessions are piling up, check status across workstreams, close a workstream, or hand a long session over to a new one.
+description: Use when the user describes a piece of work that will span several sessions or steps (code or not, such as planning a trip), restructure many sessions, clean up finished sessions or the user says sessions are piling up, check status across workstreams, close a workstream, or hand a long session over to a new one.
 ---
 
 # podium
@@ -10,12 +10,12 @@ Read only the procedure that matches the situation. Do not read the others.
 
 | Situation | Read |
 |---|---|
-| First use in a project, or many existing sessions to sort | procedures/init.md |
-| User gives a new workstream or task area | procedures/new.md |
+| First use in a project (no `memory-bank/` yet), or many existing sessions to sort into workstreams for the first time | procedures/init.md |
+| User describes a piece of work that will take more than one session or has parallel parts, in any field (not only code) | procedures/new.md |
 | User asks what is going on across workstreams | procedures/status.md |
 | A workstream grows and needs sub-sessions | procedures/promote.md |
 | A workstream is finished | procedures/close.md |
-| Finished or unneeded sessions pile up, the user says there are too many, or asks to clear them in one pass | procedures/tidy.md |
+| podium is already set up and finished or unneeded sessions pile up, or the user asks to clear them in one pass. If there is no `memory-bank/` yet, use init.md first | procedures/tidy.md |
 | A long session should be replaced by a fresh one | procedures/handover.md |
 
 ## Rules for every procedure
