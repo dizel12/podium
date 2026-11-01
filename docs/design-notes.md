@@ -50,6 +50,17 @@ Setup: a session in the scratch folder was asked "set up podium and clean up ses
 - Gaps fixed: what to do when memory-bank exists and the user also asked to clean up; folder scoping by working folder, not sidebar section; no evidence rule for offering delete; the "recent activity" window was loose (now 48 hours); a combined request runs the procedures in order.
 - Not covered: a truly clean init in a folder with many sessions.
 
+## Test B: find, verify, promote, handover up to their confirmation questions (2026-11-01)
+
+Setup: a session in a folder holding the fictional memory-bank, five prompts in one brief, stopping before anything that would create, open, move, archive, or edit. The memory-bank was compared with the fixture afterwards: unchanged. Source: the full transcript of the test session.
+
+- find: answered a decision question from the workstream file with its date and basis, and did not search sessions when the file was enough. For a term absent from the files it searched sessions across folders, including archived ones, and found two earlier test sessions; it said the answer came from conversation snippets and was not confirmed in any file.
+- verify: noticed the workstream had a goal but no acceptance criteria, and stopped at proposing criteria to confirm, as intended.
+- promote: noticed the workstream was already at the task-session limit (a finished one still counted) and moved to offering to archive or merge first. Gap fixed: what to do when the request reaches a session that is not the lead, and that finished sessions count until archived.
+- handover: stopped before asking the old session to edit its file, because the procedure asked the user only after that. Fixed: the plan and the yes now come first.
+- Not tested: opening the sessions themselves (needs the user's own typed request), tidy's archive and delete step, a truly empty folder's first init.
+- During this test the working tree held uncommitted edits to `SKILL.md`, `new.md`, the rules docs, and the templates that were not made by the test sessions or the author of the commits above; the subject read them. They are about placement of new sessions. They are not part of any commit here.
+
 ## Not yet checked
 
 - Headless `claude -p` here is not logged in, so tests run in a desktop-app session.

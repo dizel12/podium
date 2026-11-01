@@ -1,5 +1,7 @@
 # promote: split a workstream into task sessions, or promote the lead to manager
 
+If the request reached you in a session that is not the workstream's lead (for example the main session), do not open sessions from here: say that the split starts from the lead session, write the brief or briefs, and tell the user to paste them there.
+
 Run this from inside the workstream's lead session, when the user asks to split work or the lead is getting heavy. The main session does not open a workstream's task sessions: they would nest under main and break the grouping.
 
 Goal: split only when it pays off, keep the count small, and keep the workstream file the single source of truth.
@@ -11,7 +13,7 @@ Read the workstream file and its `progress.md` entry. A split is justified only 
 - a result needs independent verification (the session that built it must not verify it).
 If none holds, say so and recommend staying in one session. The user decides.
 
-Check the limit: count the workstream's active task sessions in the ledger. At `maxWorkSessions` or more, do not open another. Offer to close a finished one or merge two tasks first.
+Check the limit: count the workstream's task sessions in the ledger that are not archived. A finished task session still counts until it is archived. At `maxWorkSessions` or more, do not open another. The first move is to offer to archive finished ones, or to merge two tasks.
 
 ## 2. Check whether the lead should become a manager
 Promote when any holds: two or more tasks run at the same time, decisions or outside answers keep piling up, or unlike kinds of work are mixed (for example paperwork and building).
