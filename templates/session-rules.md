@@ -28,3 +28,6 @@ A new task, sorting sessions, status, closing work, or replacing a long session:
 
 ### Long sessions
 After an auto-summary has run, or when a session has grown heavy, offer to replace it: update the workstream file, open a new session with the same name from that file, and archive the old one after the user agrees. Archive; delete only if the user says delete.
+
+### Placement
+Working directory, app project, sidebar section, and parent session are separate. Never automatically inherit the caller's app project for a new workstream. Verify the intended destination and required tools before creation; if unsupported, provide the brief and manual setup without creating a misplaced session. Separate projects require actual separate projects, and completion requires verified placement.

@@ -24,11 +24,20 @@ Show:
 
 Ask: **Proceed / Adjust / Start small (lead session only).** "Start small" is the recommended first option when the task is vague.
 
+## Placement check before any creation
+
+Resolve placement before creating files, projects, sections, or sessions:
+1. State the intended working directory, app project, sidebar section, and parent relationship separately. Existing directory or project IDs are not the destination by default.
+2. Check available tools for the complete placement flow, including project creation/selection and detach/move if needed. Do not open a session first and discover missing placement tools afterwards.
+3. For independent projects, require a distinct destination project for each workstream. If the app cannot create those projects, prepare the brief and request only the necessary manual project setup. Do not substitute the current project, a sidebar section, or a projectless chat.
+4. If the existing request and project rules do not establish the destination, ask one placement question before creation. Do not ask again when the user already specified it.
+5. Once placement is achievable and authorized, use the steps below. Interpret their API examples through the current host's tool schema.
+
 ## 3. On a yes, create in this order
 1. Add the entry to `progress.md` (status: in progress, priority from the user, goal, related files).
 2. Create `memory-bank/workstreams/<ID>_<name>.md`, where `<name>` is a short ASCII kebab-case slug of the title, from the template: goal, key documents, current state (what you learned in step 1), next steps, open items.
 3. Write the lead session's brief. Do not paste the conversation; give: the workstream file path, the goal, the current step, what is undecided, and the reporting rule: **report to the main session only when done, blocked, or a decision is needed; keep progress in the workstream file.** Add the project's own working rules only by pointing to `CLAUDE.md`.
-4. With session tools, first check that this turn started from the user's own words (see the skill's session limits). If it did not, skip to step 5. Otherwise open the lead session: brief to `prompt`; the goal, decisions so far and constraints to `background` (at least 80 characters, the tool refuses less); `cwd` this project's folder; same folder, no separate worktree, unless the project already uses worktrees. Then detach it from the main session and put it in the workstream's sidebar section. Create the section only together with the session. Afterwards read the session back (get its details) and confirm it exists, is detached, and is in the section; report what you confirmed, not what you asked for. If opening is refused, do not work around it and do not leave an empty section: go to step 5 and include creating the section in the manual steps.
+4. With session tools, first check that this turn started from the user's own words (see the skill's session limits). If it did not, skip to step 5. Otherwise open the lead session: brief to `prompt`; the goal, decisions so far and constraints to `background` (at least 80 characters, the tool refuses less); `cwd` the agreed working folder (which may be shared); app project membership must be the separately agreed destination, never automatically inherited from the caller. Do not create a separate worktree unless requested or required by the project rules. Then detach it from the main session and put it in the workstream's sidebar section. Create the section only together with the session. Afterwards read the session back (get its details) and confirm it exists, is detached, and is in the section; report what you confirmed, not what you asked for. If opening is refused, do not work around it and do not leave an empty section: go to step 5 and include the missing setup in the manual steps. If verification finds incorrect placement, report it as incomplete and correct it only within the authorized destination; do not silently substitute a different destination.
 5. Without session tools: print the brief in one block and ask the user to open a session and paste it.
 6. Record the session in the ledger (active table, section list). If no session exists yet, write the row with the session ID "(not created)" and a note, so status shows it as pending.
 

@@ -31,6 +31,14 @@ Read only the procedure that matches the situation. Do not read the others.
 - Templates live in this plugin: `<skill directory>/../../templates/` (English) and `.../templates/ko/` (Korean). The skill directory is shown when the skill loads; do not rely on `CLAUDE_PLUGIN_ROOT`, it may be unset. Use the one that matches the user's language. Never overwrite a file that already exists.
 - Never write secrets (passwords, keys, tokens) into any file.
 
+## Placement is a precondition
+
+- Treat working directory, app project membership, sidebar section, and parent-child nesting as separate properties. A shared working directory does not authorize putting every workstream in the current app project.
+- Before creating any session, determine the intended destination and check whether the available tools can achieve it. Separate workstreams must be independently grouped; never silently inherit the current app project. If the user asks for independent projects, sidebar sections or projectless chats are not equivalent.
+- If the required project cannot be created or selected, or the required detach/move operation is unavailable, stop before creating the session. Explain the missing capability and give the prepared brief and the minimal manual setup step. Do not create a misplaced session as a fallback.
+- After creation, read back actual project membership, section, and nesting where supported. Report setup complete only for properties actually verified. Missing evidence means unverified, not success.
+- Use the host's actual tool schema. Tool names, fields, nesting, and detach behavior described in procedures may be host-specific; do not assume another app implements them.
+
 ## Full rules
 The project's `CLAUDE.md` holds only a short pointer. The full rules (roles, when to split, who edits which file, opening order, reporting, approval, replacing a session) are in `<skill directory>/../../docs/rules.md` (Korean: `docs/rules.ko.md`). Read them when a procedure depends on them or you are unsure; do not read them for every request.
 

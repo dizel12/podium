@@ -53,3 +53,9 @@ Do not let two sessions edit the same file at the same time.
 
 ### Replacing a long session (optional)
 When a session's auto-summary has already run, or it has grown heavy: have it update its workstream file, start a new session under the same name with the file path in the brief, then archive the old one after the user confirms. Archive, do not delete, unless the user says delete.
+
+### Placement across hosts
+- A working directory, app project, sidebar section, and session parent are separate properties. Sharing files does not mean sharing app project membership.
+- Separate workstreams need independently visible groups. Never automatically put all leads in the caller's app project. If the user requires separate projects, sections and projectless chats do not satisfy that requirement.
+- Check all required placement capabilities before creating sessions. If a destination project or detach/move capability is missing, prepare the brief and explain the manual setup before creating anything.
+- Verify actual membership and grouping after creation. Do not claim completion based only on a returned session ID.
