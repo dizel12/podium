@@ -27,6 +27,9 @@ Read only the procedure that matches the situation. Do not read the others.
 - Templates live in this plugin: `<skill directory>/../../templates/` (English) and `.../templates/ko/` (Korean). The skill directory is shown when the skill loads; do not rely on `CLAUDE_PLUGIN_ROOT`, it may be unset. Use the one that matches the user's language. Never overwrite a file that already exists.
 - Never write secrets (passwords, keys, tokens) into any file.
 
+## Full rules
+The project's `CLAUDE.md` holds only a short pointer. The full rules (roles, when to split, who edits which file, opening order, reporting, approval, replacing a session) are in `<skill directory>/../../docs/rules.md` (Korean: `docs/rules.ko.md`). Read them when a procedure depends on them or you are unsure; do not read them for every request.
+
 ## Session tools (desktop app only)
 
 If your tool list has session management tools (list sessions, start session, detach, move to a sidebar section, archive), use them where a procedure says so. If it does not, you are in a plain terminal: print the brief the procedure produces, tell the user to open the session themselves, and record it in the ledger by hand.

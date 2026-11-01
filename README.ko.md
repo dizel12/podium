@@ -41,7 +41,7 @@ claude plugin install podium@podium
 ## 들어 있는 것
 
 - 스킬 `podium` 하나와 그 안의 절차 일곱 개: 프로젝트 설정, 업무 시작, 현황, 분할·승격, 종료, 끝난 세션 한번에 정리, 긴 세션 교체. 명령을 외울 필요가 없습니다.
-- 맥락을 담는 파일 템플릿(`memory-bank/`)과 `CLAUDE.md`에 붙일 규칙 절(영어, 한국어)
+- 맥락을 담는 파일 템플릿(`memory-bank/`)과 프로젝트 모든 세션이 podium의 존재를 알게 하는 열 줄 안팎의 `CLAUDE.md` 안내(영어, 한국어). 전체 규칙은 [docs/rules.ko.md](docs/rules.ko.md)에 있습니다
 - `examples/`의 가상 예시 둘: 소프트웨어 기능 하나와 이사
 
 ## 비용은 어떻게 낮추나
