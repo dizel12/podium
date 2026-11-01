@@ -15,10 +15,10 @@ With session tools, list the sessions: title, folder, section, running or not, p
 - an open pull request
 - the ledger or `progress.md` says the workstream is still active
 - a manager with active sub-sessions
-- recent activity (default: within the last 2 days)
+- recent activity (within the last 2 days)
 - you can see unfinished work: uncommitted or unpushed changes in its folder (read-only git commands), an open transaction mentioned in its workstream file
 
-**Candidate:** finished and the result lives outside the conversation: a merged or closed pull request, a workstream marked done with its worklog written, a ledger row already closed, or no activity for a long time with nothing open.
+**Candidate:** finished and the result lives outside the conversation: a merged or closed pull request, a workstream marked done with its worklog written, a ledger row already closed, or no activity for `idleDays` days (default 14) with nothing open.
 Write one line per candidate: why it is finished, and where the result lives (file, pull request, branch). If the result exists only in the conversation, it is not a candidate: offer to write it into the workstream file first.
 
 **Unclear:** say what is missing and ask. Do not guess.
@@ -28,7 +28,8 @@ Archiving a parent also archives its finished sub-sessions. If a child should li
 
 ## 5. Show the plan and ask
 Show a table: session, why it is a candidate, where the result lives, and the action proposed. Then ask: **Archive the selected (can be undone) / Delete the selected permanently / Choose one by one / Cancel.** Let the user remove items from the list and follow their exclusions exactly.
-- Archive is the default and the recommended option.
+- Archive is the default and the recommended option. An archived session keeps its conversation, and the session search can include archived sessions, so what was decided there stays findable. Recommend archive for any session that did real work.
+- Offer delete only for sessions with nothing worth keeping: tests, empty or abandoned starts. Say that delete also destroys the conversation.
 - Delete only if the user asks for delete in this exchange or picks it. Say that delete cannot be undone, and expect the app to ask for approval again.
 - If the user says only "close" or "clean up", treat it as archive and say you did.
 
@@ -37,5 +38,5 @@ Show a table: session, why it is a candidate, where the result lives, and the ac
 - Afterwards list the sessions again and compare. A child may have been archived with its parent, or a session may be missing that you did not expect; tell the user.
 
 ## 7. Record and report
-- Move the matching ledger rows to "Closed or replaced" with the reason and where the result lives. The ledger belongs to the main session: edit it if you are the main session, otherwise tell the user what to change. Remove an empty sidebar section only after asking.
+- Move the matching ledger rows to "Closed or replaced". In the reason column write one line that works as an index for the archived session: what the work was, what was decided or produced, and where the result lives (file, pull request, branch). The ledger belongs to the main session: edit it if you are the main session, otherwise tell the user what to change. Remove an empty sidebar section only after asking.
 - Report: how many archived, how many deleted, what was kept and why, what failed, and what is now gone for good.
