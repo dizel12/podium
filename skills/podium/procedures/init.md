@@ -3,7 +3,7 @@
 Goal: install the memory-bank and the session rules, and if the project already has many sessions, propose how to group them into workstream sections. Nothing changes until the user says yes.
 
 ## 1. Check what exists
-- If `memory-bank/progress.md` and the ledger already exist, podium is installed. Tell the user and run `status.md` instead.
+- If `memory-bank/progress.md` and the ledger already exist, podium is installed. Tell the user. If they also asked to sort or clean up sessions, continue with `tidy.md`; otherwise run `status.md`. An empty ledger is normal in a new project and does not mean podium is missing.
 - Read the project `CLAUDE.md` (if any) and a list of the docs folder. Note existing rules so you do not contradict them.
 - If you have session tools, list the sessions and keep only those in this project's folder: title, section, who opened it, whether it is running. Sessions from other folders belong to other projects; leave them alone.
 

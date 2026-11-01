@@ -22,6 +22,8 @@ Read only the procedure that matches the situation. Do not read the others.
 
 ## Rules for every procedure
 
+- A request that combines two procedures (for example "set up and clean up") runs them in order, and each stops at its own confirmation. If `memory-bank/` already exists, skip `init` and say so.
+
 - Talk to the user in the language they use. Keep file names, paths, and commands as they are.
 - When a decision is needed, ask one question with a few options and a recommended first option. Use the choice-question tool if your tools have one; otherwise list the options in plain text. Do not decide for the user, and wait for the answer.
 - Never create or move sessions, edit the user's `CLAUDE.md`, or archive anything before showing the plan and getting a yes.
@@ -38,6 +40,6 @@ If your tool list has session management tools (list sessions, start session, de
 
 Limits seen in the app:
 - A session can open a new session only when the user typed a request in that very session. A message from another session, an automated event, or a task another session handed you does not count. Check this before you try: if this turn did not start from the user's own words, do not call the start tool; give the brief and the manual steps instead.
-- The session list covers every folder. Keep only sessions whose folder is this project's folder.
+- The session list covers every folder, and sidebar sections are shared across projects. Decide what belongs to this project by each session's working folder, not by its section.
 - A session nests under the session that opened it, and moves with it. Only the opener can detach it. If a detach or move is refused, say so and give the manual steps (sidebar, right-click, detach to top level, drag to the section).
 - Never archive a session that is open on screen or pinned without telling the user; delete only when the user says delete.

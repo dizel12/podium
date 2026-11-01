@@ -15,7 +15,7 @@ With session tools, list the sessions: title, folder, section, running or not, p
 - an open pull request
 - the ledger or `progress.md` says the workstream is still active
 - a manager with active sub-sessions
-- recent activity (within the last 2 days)
+- recent activity (within the last 48 hours)
 - you can see unfinished work: uncommitted or unpushed changes in its folder (read-only git commands), an open transaction mentioned in its workstream file
 
 **Candidate:** finished and the result lives outside the conversation: a merged or closed pull request, a workstream marked done with its worklog written, a ledger row already closed, or no activity for `idleDays` days (default 14) with nothing open.
@@ -29,7 +29,7 @@ Archiving a parent also archives its finished sub-sessions. If a child should li
 ## 5. Show the plan and ask
 Show a table: session, why it is a candidate, where the result lives, and the action proposed. Then ask: **Archive the selected (can be undone) / Delete the selected permanently / Choose one by one / Cancel.** Let the user remove items from the list and follow their exclusions exactly.
 - Archive is the default and the recommended option. An archived session keeps its conversation, and the session search can include archived sessions, so what was decided there stays findable. Recommend archive for any session that did real work.
-- Offer delete only for sessions with nothing worth keeping: tests, empty or abandoned starts. Say that delete also destroys the conversation.
+- Offer delete only for sessions with nothing worth keeping, and only when the evidence says so: the user called it a test or throwaway, its workstream file or ledger note says so, or it never got past the first turn. Say that delete also destroys the conversation. When unsure, recommend archive.
 - Delete only if the user asks for delete in this exchange or picks it. Say that delete cannot be undone, and expect the app to ask for approval again.
 - If the user says only "close" or "clean up", treat it as archive and say you did.
 
