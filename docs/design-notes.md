@@ -41,6 +41,15 @@ Setup: one session in the scratch folder was given five prompts in one brief and
 - Findings: the description did not signal that non-code or multi-session work counts, so the trip request was treated as unrelated; the sign-up request was borderline; "wrap up" could mean finishing code; "too many sessions" fits both init and tidy.
 - Changes made, not yet retested: description now says work spanning several sessions or steps, code or not; `new` skips small one-conversation tasks; `close` first checks what "wrap up" means; init vs tidy told apart in the skill table.
 
+## Test A: set up and clean up in a folder that already has sessions (2026-11-01)
+
+Setup: a session in the scratch folder was asked "set up podium and clean up sessions". The folder already held a memory-bank from an earlier test, so this exercised routing, not a clean first install. Source: the subject's report and the start of its transcript.
+
+- Routed correctly: it saw the existing memory-bank, skipped init, and followed tidy; it kept to this project's folder by working folder, listed the folder's three test sessions, left out sessions of other folders, and stopped at the confirmation question without acting.
+- It read init and status before tidy, which cost tokens; the table row and the combined request made the choice unclear.
+- Gaps fixed: what to do when memory-bank exists and the user also asked to clean up; folder scoping by working folder, not sidebar section; no evidence rule for offering delete; the "recent activity" window was loose (now 48 hours); a combined request runs the procedures in order.
+- Not covered: a truly clean init in a folder with many sessions.
+
 ## Not yet checked
 
 - Headless `claude -p` here is not logged in, so tests run in a desktop-app session.
