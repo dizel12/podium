@@ -61,6 +61,17 @@ Setup: a session in a folder holding the fictional memory-bank, five prompts in 
 - Not tested: opening the sessions themselves (needs the user's own typed request), tidy's archive and delete step, a truly empty folder's first init.
 - During this test the working tree held uncommitted edits to `SKILL.md`, `new.md`, the rules docs, and the templates that were not made by the test sessions or the author of the commits above; the subject read them. They are about placement of new sessions. They are not part of any commit here.
 
+## Test C: clean init, new workstream, and tidy with real archiving (2026-11-02)
+
+Setup: a session in an empty folder and the earlier test-A session. The author delegated the whole test to the orchestrating session, which relayed the requests and answers as messages, each labelled as relayed. The author typed one answer ("go ahead") in the empty-folder session. Source: the sessions' transcripts, the files on disk, and the app's session list read afterwards.
+
+- Clean init: in an empty folder it showed a plan, asked for a yes, and after the yes created six memory-bank files and a `CLAUDE.md`. The six files and the `CLAUDE.md` match the Korean templates exactly.
+- New workstream: it asked two questions first (where the app code is, and whether a small task should be a workstream), showed a draft plan with the placement note, and noticed that a request relayed by another session cannot open a session. After the answers it created the progress entry, the workstream file, and a ledger row marked "(not created)", printed the lead session's brief, and listed what it had and had not verified. It did not create a sidebar section, as intended.
+- Gap fixed: the ledger kept template placeholders and a made-up main session name; `new` now fills known fields and deletes lines it cannot fill.
+- Tidy: it chose tidy over init (the memory-bank existed, and it checked instead of trusting the relayed text that said otherwise), scoped to the working folder, wrote a candidate table with reasons, and stopped at the question. After the choice "archive two, keep the one active within 48 hours" it archived exactly those two; the app's list afterwards shows the two archived and every other session unchanged. It left the ledger alone because the ledger belongs to the main session.
+- Observation: `new` asks up to three things before creating anything (the small-task check, an app-location question when the folder is empty, and a placement confirmation at open time). Worth watching for friction.
+- Still not tested: opening sessions from a request the user typed in that very session (lead session, task session, verifier, replacement session), and a replacement actually archiving its predecessor.
+
 ## Not yet checked
 
 - Headless `claude -p` here is not logged in, so tests run in a desktop-app session.
