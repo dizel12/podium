@@ -3,7 +3,7 @@
 [English](README.md)
 
 <p align="center">
-  <img src="docs/assets/banner.png" alt="podium: podium: 지휘대 위의 펭귄 지휘자가 세션 카드를 든 펭귄 무리를 향해 지휘봉을 든 모습" width="900">
+  <img src="docs/assets/banner.png" alt="podium: 지휘대 위의 펭귄 지휘자가 지휘봉을 들고, 펭귄 무리 위로 작은 세션 카드들이 떠 있는 모습" width="900">
 </p>
 
 **상태: 작성을 마쳤고, 프로젝트 설정·새 업무·현황·종료는 실제 세션에서 시험했습니다. 분할, 긴 세션 교체, 세션 정리는 아직 시험하지 못했습니다. 버전 0.1.0.**
