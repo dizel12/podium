@@ -1,12 +1,12 @@
 # podium
 
-[한국어](README.ko.md)
+<p align="center"><b>English</b> | <a href="README.ko.md">한국어</a></p>
 
 <p align="center">
   <img src="docs/assets/banner.png" alt="podium: a penguin conductor on a podium raises a baton over a flock of penguins, with small session cards floating above them" width="900">
 </p>
 
-**Status: written and tested in live sessions for set-up, new workstream, status, and close; splitting, replacing a long session, and cleaning up are not yet tested. Version 0.1.0.**
+**Version 0.1.0, early.** Tested in live sessions: set-up, new workstream, status, close. Not yet tested: splitting a workstream, replacing a long session, cleaning up many sessions. Details: [docs/design-notes.md](docs/design-notes.md).
 
 ## What is this?
 
@@ -17,6 +17,35 @@ Because the state lives in files and not in the chat, you can close any session 
 <p align="center">
   <img src="docs/assets/concept.png" alt="Before and after: on the left, scattered penguins with tangled session cards; on the right, the same penguins lined up in three groups under a penguin conductor on a podium" width="800">
 </p>
+
+### The few terms you need
+
+| Term | Meaning |
+|---|---|
+| Workstream | One piece of work that takes more than one session, such as "add reminders to my to-do app". It gets one sidebar section and one file. |
+| Lead session | The first session of a workstream. It does the whole job until splitting pays off. |
+| Task session | A session that does one task of a workstream. A lead session that coordinates several of them is called a manager. |
+| Main session | The one session you talk to first. It does not do the work; it opens workstreams, hands out tasks, and reports. |
+| `memory-bank/` | A folder of Markdown files that holds the state: what is done, what is next, what was decided. A new session reads these instead of the old chat. |
+
+### What it looks like
+
+The sidebar gets one section per workstream. The files sit in your project:
+
+```text
+Sidebar                      Your project
+-------                      ------------
+Shared tools                 memory-bank/
+  main                         activeContext.md     where things stand across workstreams
+Reminders                      progress.md          one line per workstream
+  reminders-lead               sessions.md          which sessions are open or replaced
+Login bug                      workstreams/
+  login-bug                      W-01_reminders.md  goal, status, next steps, decisions
+                                 W-02_login-bug.md
+                               worklog/             finished work, one file each
+```
+
+A complete filled-in version is in [examples/dev-notification](examples/dev-notification/README.md) (a software feature) and [examples/moving-plan](examples/moving-plan/README.md) (a non-coding example).
 
 ## Who is it for?
 
@@ -30,9 +59,15 @@ It is not for you if you run one task at a time, or if you want agents to run on
 
 1. Install it (below).
 2. In a project, say: "Set up podium and sort my sessions." podium reads your sessions and docs, shows how it would group them, and asks: proceed, adjust, or only install the files and rules.
-3. When you have a piece of work that will take more than one session, tell Claude to make it a workstream, for example: "Make this a workstream: add reminders to my to-do app." If you forget, Claude offers once when it sees a big piece of work. podium reads what you point it to, asks up to three questions, shows a plan (section name, lead session, task sessions it might add later) and asks: proceed, adjust, or start small. Small tasks stay in a normal conversation; you do not need podium for them.
-4. Open the lead session it made and work there. Ask for task sessions from inside the lead session only when splitting pays off.
-5. When the work is done, say so. podium checks the files before it archives the sessions.
+3. When a piece of work will take more than one session, say: "Make this a workstream: add reminders to my to-do app." If you forget, Claude offers once when it sees a big piece of work. Small tasks stay in a normal conversation.
+4. podium reads what you point it to, asks up to three questions, and shows a plan: section name, lead session, task sessions it might add later. You answer: proceed, adjust, or start small.
+5. Work in the lead session it made. Ask for task sessions from inside the lead session, only when splitting pays off.
+6. When the work is done, say so. podium checks the files before it archives the sessions.
+
+## Requirements
+
+- Claude Code with plugin support (the `claude plugin` commands).
+- For the full experience, the Claude desktop app: creating sessions and filing them into sidebar sections uses its session tools. In a plain terminal podium still sets up the files and rules and gives you briefs to paste, but you open sessions yourself.
 
 ## Install
 
@@ -55,7 +90,7 @@ In the desktop app, use the **+** button next to the prompt box and choose **Add
 
 ## How it keeps cost low
 
-Only the skill's one-line description is in context on every turn. The procedures and templates are read only when needed. If even that line bothers you, turn on manual mode: in `skills/podium/SKILL.md`, add `disable-model-invocation: true` to the frontmatter, then call it with `/podium` when you want it.
+Only the skill's one-line description is in context on every turn. The procedures and templates are read only when needed. If even that line bothers you, turn on manual mode: in `skills/podium/SKILL.md`, add `disable-model-invocation: true` to the frontmatter (the settings block at the top of the file), then call it with `/podium` when you want it.
 
 ## Settings
 
@@ -63,15 +98,32 @@ Only the skill's one-line description is in context on every turn. The procedure
 
 ## Limits
 
-- Creating sessions and filing them into sidebar sections uses the desktop app's session tools. In a plain terminal, podium still sets up the files and rules and gives you briefs to paste, but you open sessions yourself.
-- A session can open new sessions only when you typed a request in that session, and only the session that opened another can detach it. podium works around this by opening each workstream's lead session first and having you split from inside it.
+- A session can open new sessions only when you typed a request in that session, and only the session that opened another can detach it (take it out from under its parent in the sidebar). podium works around this by opening each workstream's lead session first and having you split from inside it.
 - podium does not say how a session should do its work (coding style, tests, writing). Keep that in your own `CLAUDE.md`.
 - Verified in live sessions (see [docs/design-notes.md](docs/design-notes.md)): the skill reads only the matching procedure, stays quiet on small questions, waits for your answer, and can open and file a lead session when you typed the request. Not yet verified: splitting, replacing a long session, cleaning up, a project with many existing sessions.
 
 ## Similar projects
 
-Gas Town and CCPM coordinate coding agents automatically; claude-workstream-kit keeps workstream state in files for one project. podium is for a person running many sessions across kinds of work. Details and sources: [docs/design-notes.md](docs/design-notes.md).
+- [Gas Town](https://github.com/gastownhall/gastown) and [CCPM](https://github.com/automazeio/ccpm) coordinate coding agents automatically.
+- [claude-workstream-kit](https://github.com/ChristopherA/claude-workstream-kit) keeps workstream state in files for one project.
+- podium is for a person running many sessions across kinds of work, with the person deciding each step.
+
+Details and sources: [docs/design-notes.md](docs/design-notes.md).
+
+## Contributing
+
+Contributions are welcome, from anyone. Most changes are wording, so you do not need to write code.
+
+Good first contributions:
+- Run podium in a live session and tell us what happened (what you typed, what it did). Results for the untested procedures (splitting, replacing a long session, cleaning up) are the most useful.
+- Improve a procedure, a template, or the docs. English and Korean files are changed together; [CONTRIBUTING.md](CONTRIBUTING.md) explains how.
+- Add an example from a kind of work that is not covered yet (it must be invented).
+- Fix wording in either language.
+
+Open an [issue](https://github.com/stlahxm/podium/issues) first for larger changes so we can agree on the direction. For a small fix, send a pull request directly.
+
+Everyone taking part follows the [Code of Conduct](CODE_OF_CONDUCT.md). Security problems go through [SECURITY.md](SECURITY.md), not a public issue.
 
 ## License
 
-MIT
+MIT. Contributions are accepted under the same license; see [LICENSE](LICENSE).
