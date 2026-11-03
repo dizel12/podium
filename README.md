@@ -2,6 +2,10 @@
 
 [한국어](README.ko.md)
 
+<p align="center">
+  <img src="docs/assets/banner.png" alt="podium: a conductor's baton above a podium, with session cards arranged in an arc" width="900">
+</p>
+
 **Status: written and tested in live sessions for set-up, new workstream, status, and close; splitting, replacing a long session, and cleaning up are not yet tested. Version 0.1.0.**
 
 ## What is this?

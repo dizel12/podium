@@ -2,6 +2,10 @@
 
 [English](README.md)
 
+<p align="center">
+  <img src="docs/assets/banner.png" alt="podium: 지휘대 위의 지휘봉과 호 모양으로 늘어선 세션 카드" width="900">
+</p>
+
 **상태: 작성을 마쳤고, 프로젝트 설정·새 업무·현황·종료는 실제 세션에서 시험했습니다. 분할, 긴 세션 교체, 세션 정리는 아직 시험하지 못했습니다. 버전 0.1.0.**
 
 ## 이게 뭔가요?
