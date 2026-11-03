@@ -81,6 +81,15 @@ The author asked the orchestrating session, in that session itself, to run the o
 - The ledger in the scratch folder was updated by the orchestrating session (main role): session name, ID, section, and a note that detachment was verified in the app.
 - Still not tested: opening task, verification, and replacement sessions from inside that lead session (they must be typed by the user there so the new sessions nest under the lead).
 
+## Test E: split, verify, and replace, each typed by the user inside the sessions (2026-11-03)
+
+The author typed the requests in the lead session and in the research session. Source: the full transcripts of the lead and research sessions, the app's session list, and the files on disk.
+
+- Worked: the lead opened a research task session on request; it started from the user's typed turn, nested under the lead, and sat in the lead's section. The research session saved its result to the shared notes folder and made no project files. The lead refused to open a verifier while there was nothing to verify, then, after the app blocked a start made in a notification turn and turned it into a start card, the author started the card: the verifier opened under the lead, read the result file only, and returned a verdict with specific gaps. The lead then asked the author the open questions as choices. A user-typed "replace this session" in the research session produced a working successor that read the result note and the workstream file and waited.
+- Did not fire: the podium skill. None of the three sessions called it. They acted from the short pointer in `CLAUDE.md` alone. The result was close to intended, but skipped the skill's own safeguards: no limit check or plan question before opening the task session, the workstream file's session table was not updated (results stayed in the notes folder), the replacement got a reworded title with a "(replaced)" tag, and the research session opened its own successor, so the tree is now lead, research, research-2 (four layers; archiving the old research session would archive its finished child too).
+- Fixes made: the description now names opening a task session and having a separate session verify; `handover` says a task session never opens its own replacement and the replacement keeps the exact title; the CLAUDE.md pointer asks to record opened sessions and results in the workstream file and says a task session asks the lead to replace it.
+- Not retested after these fixes.
+
 ## Not yet checked
 
 - Headless `claude -p` here is not logged in, so tests run in a desktop-app session.
