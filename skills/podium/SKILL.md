@@ -29,6 +29,7 @@ Read only the procedure that matches the situation. Do not read the others.
 - Never create or move sessions, edit the user's `CLAUDE.md`, or archive anything before showing the plan and getting a yes.
 - Read settings from `memory-bank/.podium.json` (`idPrefix`, `ledgerPath`, `maxWorkSessions`, `idleDays`). If the file is missing, use `W`, `memory-bank/sessions.md`, `4`, `14`.
 - Templates live in this plugin: `<skill directory>/../../templates/` (English) and `.../templates/ko/` (Korean). The skill directory is shown when the skill loads; do not rely on `CLAUDE_PLUGIN_ROOT`, it may be unset. Use the one that matches the user's language. Never overwrite a file that already exists.
+- The ledger may be a file of its own (`sessions.md`) or a table inside another file (for example a "session registry" section of `CLAUDE.md`, when `ledgerPath` points there). Read the existing table's header first and write rows in that layout: map your fields to its columns by meaning, never add, drop, or reorder columns, and edit only that table. If a field has no column, put it in the closest text column. The ledger belongs to the main session: if you are not it, say what to change instead of editing.
 - Never write secrets (passwords, keys, tokens) into any file.
 
 ## Placement is a precondition

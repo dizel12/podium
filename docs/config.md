@@ -5,7 +5,7 @@
 | Key | Default | Meaning |
 |---|---|---|
 | `idPrefix` | `W` | Prefix of workstream IDs: `W-01`, `W-02`, ... Change it if `W` clashes with an ID scheme you already use. |
-| `ledgerPath` | `memory-bank/sessions.md` | Where the session ledger lives. |
+| `ledgerPath` | `memory-bank/sessions.md` | Where the session ledger lives. It may be a table inside another file, such as a session registry section of `CLAUDE.md`; podium then follows that table's existing columns instead of its own template. |
 | `idleDays` | `14` | A session with no activity for this many days counts as long idle in the status hint and in `tidy`. Nothing happens automatically; it only decides what podium points out. |
 | `maxWorkSessions` | `4` | Most task sessions open at once in one workstream. At the limit, podium offers to close or merge one before opening another. |
 
