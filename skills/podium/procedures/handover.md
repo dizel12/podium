@@ -4,6 +4,10 @@ Optional. Use when a session's context auto-summary has already run, the convers
 
 This is not splitting a task and not summarizing in place. Same work, same name, fresh context.
 
+**If the session to replace is a task session and you are that session**, do not open the replacement yourself. It would nest under you, make the tree deeper than three layers, and be archived together with you. Update your part of the workstream file, then tell the user to ask for the replacement in the lead session, which opens it. Only the lead (or a main session acting for it) opens task-session replacements.
+
+The replacement keeps the exact title and name of the session it replaces: no "(replaced)" tag and no reworded title.
+
 ## 1. Check it is worth it
 - Is the session mid-task in a way files cannot capture (a half-finished edit, an open database transaction, a running job)? If so, finish or note that first; do not hand over blindly.
 - If the work is nearly done, say so and suggest finishing instead.

@@ -1,6 +1,6 @@
 ---
 name: podium
-description: Use when the user asks to make something a workstream or start a new one ("make this a workstream", "새 업무로 만들어 줘"), set podium up, sort or clean up sessions, check status across workstreams, find where something was decided, set up an independent verification of finished work, close a workstream, or replace a long session with a fresh one.
+description: Use when the user asks to make something a workstream or start a new one ("make this a workstream", "새 업무로 만들어 줘"), set podium up, sort or clean up sessions, check status across workstreams, find where something was decided, set up an independent verification of finished work, close a workstream, open a task session for part of a workstream, have a separate session verify finished work, or replace a long session with a fresh one.
 ---
 
 # podium
