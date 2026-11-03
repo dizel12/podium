@@ -2,7 +2,7 @@
 
 [English](README.md)
 
-**상태: 작성을 마쳤고, 프로젝트 설정·새 업무·현황·종료는 실제 세션에서 시험했습니다. 분할, 긴 세션 교체, 세션 정리는 아직 시험하지 못했습니다. 버전 0.1.0, 공개 전입니다.**
+**상태: 작성을 마쳤고, 프로젝트 설정·새 업무·현황·종료는 실제 세션에서 시험했습니다. 분할, 긴 세션 교체, 세션 정리는 아직 시험하지 못했습니다. 버전 0.1.0.**
 
 ## 이게 뭔가요?
 
@@ -28,15 +28,15 @@ podium은 Claude Code 세션이 한 줄로 쌓이는 것을 막아 주는 플러
 
 ## 설치
 
-아직 공개 전입니다. 로컬 사본으로 써 보려면 터미널에서:
+터미널에서:
 
 ```bash
-claude plugin marketplace add ./podium
+claude plugin marketplace add stlahxm/podium
 claude plugin install podium@podium
 ```
 
-한 세션에서만 불러오려면 `claude --plugin-dir ./podium`을 씁니다.
-공개된 뒤에는 첫 명령에 경로 대신 GitHub `owner/repo`를 씁니다. 데스크톱 앱에서는 마켓플레이스를 추가한 뒤 프롬프트 옆 **+** 버튼에서 **Add plugins**를 고릅니다.
+한 세션에서만 써 보려면 저장소를 복제한 뒤 `claude --plugin-dir ./podium`을 씁니다.
+데스크톱 앱에서는 마켓플레이스를 추가한 뒤 프롬프트 옆 **+** 버튼에서 **Add plugins**를 고릅니다.
 
 ## 들어 있는 것
 

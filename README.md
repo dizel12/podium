@@ -2,7 +2,7 @@
 
 [한국어](README.ko.md)
 
-**Status: written and tested in live sessions for set-up, new workstream, status, and close; splitting, replacing a long session, and cleaning up are not yet tested. Version 0.1.0, not published.**
+**Status: written and tested in live sessions for set-up, new workstream, status, and close; splitting, replacing a long session, and cleaning up are not yet tested. Version 0.1.0.**
 
 ## What is this?
 
@@ -28,15 +28,15 @@ It is not for you if you run one task at a time, or if you want agents to run on
 
 ## Install
 
-Not published yet. To try it from a local copy, in a terminal:
+In a terminal:
 
 ```bash
-claude plugin marketplace add ./podium
+claude plugin marketplace add stlahxm/podium
 claude plugin install podium@podium
 ```
 
-or load it for one session only: `claude --plugin-dir ./podium`.
-After it is published the first command will take a GitHub `owner/repo` instead of a path. In the desktop app, use the **+** button next to the prompt box and choose **Add plugins** once the marketplace is added.
+To try it for one session only, clone the repository and run `claude --plugin-dir ./podium`.
+In the desktop app, use the **+** button next to the prompt box and choose **Add plugins** once the marketplace is added.
 
 ## What you get
 
