@@ -14,6 +14,10 @@ podium is a Claude Code plugin that keeps many sessions from piling up in one fl
 You tell Claude a task in plain words. podium turns each task into its own workstream: one sidebar section, one file that holds what is going on, and one lead session. When a workstream gets big, the lead session can take on task sessions; when it is small, it stays one session.
 Because the state lives in files and not in the chat, you can close any session and a new one picks up where it stopped.
 
+<p align="center">
+  <img src="docs/assets/concept.png" alt="Before and after: on the left, scattered penguins with tangled session cards; on the right, the same penguins lined up in three groups under a penguin conductor on a podium" width="800">
+</p>
+
 ## Who is it for?
 
 - You use Claude Code, mostly in the desktop app, for more than one piece of work at a time, and your sidebar has become a long list of similar titles.
