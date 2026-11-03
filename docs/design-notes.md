@@ -90,6 +90,16 @@ The author typed the requests in the lead session and in the research session. S
 - Fixes made: the description now names opening a task session and having a separate session verify; `handover` says a task session never opens its own replacement and the replacement keeps the exact title; the CLAUDE.md pointer asks to record opened sessions and results in the workstream file and says a task session asks the lead to replace it.
 - Not retested after these fixes.
 
+## Test F: retest of skill firing after the description change (2026-11-03)
+
+Setup: a fresh session in the fixture folder was given the three requests that did not fire the skill in test E (open a task session, have another session verify, replace this long session), with the instruction to stop at confirmations. Source: the session's transcript, and the fixture folder compared with its original afterwards.
+
+- The skill was called for all three requests (three `Skill` calls in the transcript) and the matching procedure was read each time: promote, verify, handover.
+- It stopped at the right questions: for the task session it found the workstream already at its limit (4 of 4, a finished one still counting) and asked how to proceed; for verification it found no acceptance criteria and proposed five to confirm; for replacement it showed the plan (update the file, same-name successor, archive the old one) and asked proceed, adjust, or keep.
+- The memory-bank was identical to the fixture afterwards: nothing was created or edited.
+- Caveat: the choice-question tool answered with its recommended option automatically in that unattended session, so waiting for a real answer was not exercised; the session took no action after the automatic answers, as instructed.
+- Observed while archiving the scratch sessions: archiving a session also archives its finished child. Archiving the old research session archived its replacement, confirming why a replacement must not be opened as a child of the session it replaces.
+
 ## Not yet checked
 
 - Headless `claude -p` here is not logged in, so tests run in a desktop-app session.
