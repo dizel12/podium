@@ -72,6 +72,15 @@ Setup: a session in an empty folder and the earlier test-A session. The author d
 - Observation: `new` asks up to three things before creating anything (the small-task check, an app-location question when the folder is empty, and a placement confirmation at open time). Worth watching for friction.
 - Still not tested: opening sessions from a request the user typed in that very session (lead session, task session, verifier, replacement session), and a replacement actually archiving its predecessor.
 
+## Test D: opening a lead session from a turn the user typed (2026-11-03)
+
+The author asked the orchestrating session, in that session itself, to run the open step. The skill was not loaded there, so the orchestrating session ran the `new` procedure's open step by hand; this tests the app's side, not the skill's wording.
+
+- Start was accepted this time (the previous refusals were all in turns started by another session or an automated event). The lead session was opened with the brief, detached from the opener, filed into a newly created sidebar section, and read back from the app: detached, in the section, working folder correct.
+- The lead session read its workstream file, announced "taking over, next: …" in one line, created nothing, and waited, as the brief said.
+- The ledger in the scratch folder was updated by the orchestrating session (main role): session name, ID, section, and a note that detachment was verified in the app.
+- Still not tested: opening task, verification, and replacement sessions from inside that lead session (they must be typed by the user there so the new sessions nest under the lead).
+
 ## Not yet checked
 
 - Headless `claude -p` here is not logged in, so tests run in a desktop-app session.
