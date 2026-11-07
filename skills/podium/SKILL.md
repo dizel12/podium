@@ -1,6 +1,6 @@
 ---
 name: podium
-description: Use when the user asks to make something a workstream or start a new one ("make this a workstream", "새 업무로 만들어 줘"), set podium up, sort or clean up sessions, check status across workstreams, find where something was decided, set up an independent verification of finished work, close a workstream, open a task session for part of a workstream, have a separate session verify finished work, or replace a long session with a fresh one.
+description: Use when the user asks to make something a workstream or start a new one ("make this a workstream", "새 업무로 만들어 줘"), set podium up, update podium or its project rules ("podium 업데이트해 줘"), sort or clean up sessions, check status across workstreams, find where something was decided, set up an independent verification of finished work, close a workstream, open a task session for part of a workstream, have a separate session verify finished work, or replace a long session with a fresh one.
 ---
 
 # podium
@@ -11,6 +11,7 @@ Read only the procedure that matches the situation. Do not read the others.
 | Situation | Read |
 |---|---|
 | First use in a project (no `memory-bank/` yet), or many existing sessions to sort into workstreams for the first time | procedures/init.md |
+| User asks to update podium or refresh an existing project's podium rules; checking only is also allowed | procedures/update.md |
 | User asks to make a piece of work a workstream or to start a new one, in any field (not only code), or accepts your offer to | procedures/new.md |
 | User asks what is going on across workstreams | procedures/status.md |
 | A workstream grows and needs sub-sessions | procedures/promote.md |
@@ -22,13 +23,13 @@ Read only the procedure that matches the situation. Do not read the others.
 
 ## Rules for every procedure
 
-- A request that combines two procedures (for example "set up and clean up") runs them in order, and each stops at its own confirmation. If `memory-bank/` already exists, skip `init` and say so.
+- A request that combines two procedures (for example "set up and clean up") runs them in order, and each stops at its own confirmation. If `memory-bank/` already exists, skip `init` and say so; an update request uses `update`, not a reinstall of the templates.
 
 - Talk to the user in the language they use. Keep file names, paths, and commands as they are.
 - When a decision is needed, ask one question with a few options and a recommended first option. Use the choice-question tool if your tools have one; otherwise list the options in plain text. Do not decide for the user, and wait for the answer.
 - Never create or move sessions, edit the user's `CLAUDE.md`, or archive anything before showing the plan and getting a yes.
 - Read settings from `memory-bank/.podium.json` (`idPrefix`, `ledgerPath`, `maxWorkSessions`, `idleDays`). If the file is missing, use `W`, `memory-bank/sessions.md`, `4`, `14`.
-- Templates live in this plugin: `<skill directory>/../../templates/` (English) and `.../templates/ko/` (Korean). The skill directory is shown when the skill loads; do not rely on `CLAUDE_PLUGIN_ROOT`, it may be unset. Use the one that matches the user's language. Never overwrite a file that already exists.
+- Templates live in this plugin: `<skill directory>/../../templates/` (English) and `.../templates/ko/` (Korean). The skill directory is shown when the skill loads; do not rely on `CLAUDE_PLUGIN_ROOT`, it may be unset. Use the one that matches the user's language. Initial setup never overwrites an existing file. Updating existing project rules requires the narrow, approved patch in `update.md`; it never resets the memory-bank from templates.
 - The ledger may be a file of its own (`sessions.md`) or a table inside another file (for example a "session registry" section of `CLAUDE.md`, when `ledgerPath` points there). Read the existing table's header first and write rows in that layout: map your fields to its columns by meaning, never add, drop, or reorder columns, and edit only that table. If a field has no column, put it in the closest text column. The ledger belongs to the main session: if you are not it, say what to change instead of editing.
 - Never write secrets (passwords, keys, tokens) into any file.
 

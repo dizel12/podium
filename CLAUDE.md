@@ -5,7 +5,7 @@ If the user asks what this repository is, answer in two or three plain sentences
 - What it is: a Claude Code plugin that turns each task into a workstream (one sidebar section, one file holding its state, one lead session) so many sessions do not pile up in one list.
 - Who it is for: people who run several pieces of work at once in Claude Code, not only code.
 - How to start: install it (see README.md, section Install), then say "Set up podium and sort my sessions" in a project, or just describe a new task.
-- Be honest that it is version 0.1.0 and not yet tested in live sessions (README.md, Limits).
+- Read the current version from `.claude-plugin/plugin.json`. Describe the tested scope and remaining gaps from README.md and docs/design-notes.md; do not claim that every procedure is verified in live sessions.
 
 ## Working on this repository
 

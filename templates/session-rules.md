@@ -1,3 +1,4 @@
+<!-- podium:begin -->
 ## Sessions (podium)
 
 This project runs several workstreams. Each has its own sidebar section, a workstream file, and a lead session. State lives in `memory-bank/` (`progress.md`, the ledger `sessions.md`, `workstreams/`); the conversation is disposable.
@@ -32,3 +33,4 @@ After an auto-summary has run, or when a session has grown heavy, offer to repla
 
 ### Placement
 Working directory, app project, sidebar section, and parent session are separate. Never automatically inherit the caller's app project for a new workstream. Verify the intended destination and required tools before creation; if unsupported, provide the brief and manual setup without creating a misplaced session. Separate projects require actual separate projects, and completion requires verified placement.
+<!-- podium:end -->

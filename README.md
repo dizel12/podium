@@ -6,7 +6,7 @@
   <img src="docs/assets/banner.png" alt="podium: a penguin conductor on a podium raises a baton over a flock of penguins, with small session cards floating above them" width="900">
 </p>
 
-**Version 0.1.0, early.** Tested in live sessions: set-up, new workstream, status, close. Not yet tested: splitting a workstream, replacing a long session, cleaning up many sessions. Details: [docs/design-notes.md](docs/design-notes.md).
+**Version 0.2.0, early.** Tested in live sessions: set-up, new workstream, status, close. Not yet fully verified: splitting a workstream, replacing a long session, cleaning up many sessions. The new project-rule update procedure has passed structure and manifest checks but has not been tested in a live conversation. Details: [docs/design-notes.md](docs/design-notes.md).
 
 ## What is this?
 
@@ -89,12 +89,14 @@ claude plugin update podium@podium
 
 Updates require a new plugin version. Auto-update is optional and is enabled by the user in `/plugin` → Marketplaces.
 
+Plugin updates do not rewrite rules previously copied into your project. Since v0.2.0, you can ask podium to compare project rules and prepare a patch for your approval. This is a guided procedure, not an automatic migration service. See [Updating project rules](docs/updating.md).
+
 To try it for one session only, clone the repository and run `claude --plugin-dir ./podium`.
 In the desktop app, use the **+** button next to the prompt box and choose **Add plugins** once the marketplace is added.
 
 ## What you get
 
-- One skill, `podium`, and nine procedures it picks from: set up a project, start a workstream, status, split or promote, close, clean up finished sessions in one pass, find where something was decided, verify finished work with a separate session, and replace a long session. There are no commands to memorize; you ask in plain sentences such as "make this a workstream", "how are things", "close this workstream", "clean up finished sessions", "where did we decide the caching approach?".
+- One skill, `podium`, and ten procedures: set up a project, update the plugin or project rules, start a workstream, status, split or promote, close, clean up finished sessions in one pass, find where something was decided, verify finished work with a separate session, and replace a long session. There are no commands to memorize; you ask in plain sentences such as "make this a workstream", "update podium", "how are things", "close this workstream", "clean up finished sessions", "where did we decide the caching approach?".
 - Templates for the files that keep context (`memory-bank/`) and a short rules section for your `CLAUDE.md` (about 370 words, roles, splitting, file ownership, reporting, approval) so every session in the project knows podium exists, in English and Korean. The full rules are in [docs/rules.md](docs/rules.md).
 - A template for shared tool sessions such as a read-only data lookup (`templates/tool-session.md`).
 - Two fictional examples under `examples/`: a software feature and a move.
