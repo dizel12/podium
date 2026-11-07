@@ -7,7 +7,12 @@
   "plugins": [
     {
       "name": "podium",
-      "source": "./",
+      "source": {
+        "source": "github",
+        "repo": "stlahxm/podium",
+        "ref": "v0.1.0",
+        "sha": "ce054f26064d1974fe6315be0f4dba0d096a4af9"
+      },
       "description": "One sidebar section per workstream, one session per task, context kept in files."
     }
   ]

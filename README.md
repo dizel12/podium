@@ -78,6 +78,17 @@ claude plugin marketplace add stlahxm/podium
 claude plugin install podium@podium
 ```
 
+The marketplace installs the published release pinned by tag and commit, rather than the latest development files on `main`. Creating a GitHub Release alone does not update this pin. See [Releasing](docs/releasing.md) for the release process.
+
+To update an existing install:
+
+```bash
+claude plugin marketplace update podium
+claude plugin update podium@podium
+```
+
+Updates require a new plugin version. Auto-update is optional and is enabled by the user in `/plugin` → Marketplaces.
+
 To try it for one session only, clone the repository and run `claude --plugin-dir ./podium`.
 In the desktop app, use the **+** button next to the prompt box and choose **Add plugins** once the marketplace is added.
 

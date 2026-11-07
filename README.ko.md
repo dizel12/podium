@@ -78,6 +78,17 @@ claude plugin marketplace add stlahxm/podium
 claude plugin install podium@podium
 ```
 
+마켓플레이스는 `main`의 최신 개발 파일 대신 태그와 커밋으로 고정한 배포본을 설치합니다. GitHub Release만 생성해도 이 지정이 바뀌지는 않습니다. 배포 절차는 [버전 배포](docs/releasing.ko.md)를 보세요.
+
+기존 설치를 업데이트하려면:
+
+```bash
+claude plugin marketplace update podium
+claude plugin update podium@podium
+```
+
+업데이트에는 새 플러그인 버전이 필요합니다. 자동 업데이트는 선택 사항이며 사용자가 `/plugin` → Marketplaces에서 켭니다.
+
 한 세션에서만 써 보려면 저장소를 복제한 뒤 `claude --plugin-dir ./podium`을 씁니다.
 데스크톱 앱에서는 마켓플레이스를 추가한 뒤 프롬프트 옆 **+** 버튼에서 **Add plugins**를 고릅니다.
 
