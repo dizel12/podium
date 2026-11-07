@@ -6,7 +6,7 @@
 
 Keep `main` as the integration branch. Make changes on short-lived branches, check them in a pull request, merge, then delete the branch. Contributors can work in their own forks without write access to this repository.
 
-The marketplace catalog on `main` points at one published plugin release using a `github` source with both a tag (`ref`) and its full commit SHA (`sha`). Claude Code uses the SHA when both are present. Keep them pointing at the same commit. Development commits on `main` do not change what this catalog installs until its source pin is updated.
+The marketplace catalog on `main` points at one published plugin release using an HTTPS git URL (`source: "url"`) with both a tag (`ref`) and its full commit SHA (`sha`). This public download does not require contributors or users to configure GitHub SSH keys. Claude Code uses the SHA when both are present. Keep them pointing at the same commit. Development commits on `main` do not change what this catalog installs until its source pin is updated.
 
 The plugin's version lives in `.claude-plugin/plugin.json` in the pinned commit. Do not duplicate it in the catalog entry. Existing installs use that version to detect updates, so changing only the source commit while keeping the same version is not a release.
 

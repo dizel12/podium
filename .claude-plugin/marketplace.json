@@ -8,8 +8,8 @@
     {
       "name": "podium",
       "source": {
-        "source": "github",
-        "repo": "stlahxm/podium",
+        "source": "url",
+        "url": "https://github.com/stlahxm/podium.git",
         "ref": "v0.1.0",
         "sha": "ce054f26064d1974fe6315be0f4dba0d096a4af9"
       },
