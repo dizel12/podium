@@ -1,6 +1,6 @@
 {
   "name": "podium",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": {
     "name": "stlahxm"
   },
@@ -8,5 +8,5 @@
   "homepage": "https://github.com/stlahxm/podium",
   "repository": "https://github.com/stlahxm/podium",
   "license": "MIT",
-  "privacyPolicyUrl": "https://github.com/stlahxm/podium/blob/v0.2.1/docs/privacy.md"
+  "privacyPolicyUrl": "https://github.com/stlahxm/podium/blob/v0.2.2/docs/privacy.md"
 }
