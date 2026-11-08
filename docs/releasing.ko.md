@@ -14,8 +14,8 @@
 
 1. 작업 브랜치에서 배포할 변경을 끝내고 `plugin.json`을 새 버전으로 올립니다. 사용자 파일의 영어·한국어를 맞추고 검사·검토 후 병합합니다.
 2. 로컬 checkout에서 `claude --plugin-dir .`로 후보를 시험합니다. 마켓플레이스 설치는 의도적으로 이전 배포본을 선택합니다. `python3 scripts/ci/check_structure.py`, `claude plugin validate .`를 실행하고 실제 세션에서 바뀐 동작을 확인하며 남은 한계를 적습니다.
-3. 시험한 커밋에 `vX.Y.Z` 태그를 만들고 push합니다. 그 커밋의 `plugin.json`은 `X.Y.Z`여야 합니다. 공개한 태그를 옮기거나 같은 배포 버전을 다른 내용에 재사용하지 않습니다.
-4. 별도 목록 변경 PR에서 `source.ref`를 해당 태그로, `source.sha`를 전체 커밋 SHA로 바꿉니다. 태그와 SHA가 일치하고 지정한 manifest의 버전이 맞는지 확인합니다. 태그 안의 목록은 이전 배포본을 가리켜도 됩니다. 플러그인 설치는 해당 manifest를 읽으며 그 안의 목록을 다시 따라가지 않습니다. 태그 뒤에 목록을 갱신하면 자기 커밋 해시를 자신에게 적는 문제를 피합니다.
+3. 시험한 소스 커밋에서 `python3 scripts/release/build_bundle.py --ref <source-commit> --out <empty-directory>`로 데이터 전용 묶음을 만듭니다. 스크립트·CI·저장소 개발 지침·pre-commit 설정·목록은 제외합니다. 출력 폴더를 검증하고 소스에서 파생한 별도 배포 브랜치에 그 파일만 커밋합니다. 이 묶음 커밋에 `vX.Y.Z` 태그를 만들고 브랜치·태그를 push합니다. 개발 파일 제거 커밋은 `main`에 병합하지 않습니다. 그 커밋의 `plugin.json`은 `X.Y.Z`여야 합니다. 공개한 태그를 옮기거나 같은 배포 버전을 다른 내용에 재사용하지 않습니다.
+4. 별도 목록 변경 PR에서 `source.ref`를 해당 태그로, `source.sha`를 전체 커밋 SHA로 바꿉니다. 태그와 SHA가 일치하고 지정한 manifest의 버전이 맞는지 확인합니다. 배포 묶음에는 목록이 없으며 목록은 `main`에 유지합니다. 태그 뒤에 목록을 갱신하면 자기 커밋 해시를 자신에게 적는 문제를 피합니다.
 5. 검사 후 목록 PR을 병합하고 해당 태그의 GitHub Release 설명을 게시합니다. 변경점, 업그레이드 영향, 시험한 범위와 미확인 범위를 적습니다. 배포 대상은 목록의 소스 지정이 결정하고 GitHub Release는 이를 설명합니다.
 6. 격리한 Claude Code 환경에서 신규 마켓플레이스 설치와 이전 버전의 업데이트를 확인합니다. 설치 버전과 실제 파일을 함께 확인합니다. 승인 없이 기존 사용자의 플러그인 설정을 바꿔 시험하지 않습니다.
 
@@ -37,3 +37,7 @@ claude plugin update podium@podium
 - [목록 소스와 태그·커밋 지정](https://code.claude.com/docs/en/plugins/marketplace-reference)
 - [버전 배포·업데이트 판단·자동 업데이트](https://code.claude.com/docs/en/plugins/host-marketplace)
 - [플러그인 명령](https://code.claude.com/docs/en/plugins/cli-reference)
+
+## 디렉터리 배포 경계
+
+디렉터리에는 변경 불가능한 배포 태그의 저장소 루트를 제출합니다. README·라이선스·지원 문서, `.claude-plugin/plugin.json`, 아이콘, `skills/`, `templates/`, `docs/`, `examples/`만 담습니다. 개발 스크립트와 CI는 `main`에 남기고 이름을 바꿔 묶음에 숨기지 않습니다. 생성기는 커밋의 Git blob을 읽어 실행 권한·심볼릭 링크·허용 외 형식·NUL·shebang을 거부하고, 비어 있지 않은 출력 폴더를 덮어쓰지 않습니다. 패키징 검증이며 디렉터리 승인을 보장하지 않습니다.

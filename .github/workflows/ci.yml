@@ -19,6 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: python3 scripts/ci/check_structure.py
+      - run: python3 scripts/release/build_bundle.py --out /tmp/podium-bundle
 
   links:
     name: local links
@@ -50,4 +51,5 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npx -y @anthropic-ai/claude-code plugin validate .
+      - run: python3 scripts/release/build_bundle.py --out /tmp/podium-bundle
+      - run: npx -y @anthropic-ai/claude-code plugin validate /tmp/podium-bundle --strict

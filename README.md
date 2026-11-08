@@ -4,7 +4,7 @@
 
 ![podium: a penguin conductor on a podium raises a baton over a flock of penguins, with small session cards floating above them](docs/assets/banner.png)
 
-**Version 0.2.2, early.** Tested in live sessions: set-up, new workstream, status, close. Not yet fully verified: splitting a workstream, replacing a long session, cleaning up many sessions. The new project-rule update procedure has passed structure and manifest checks but has not been tested in a live conversation. Details: [docs/design-notes.md](docs/design-notes.md).
+**Version 0.2.3, early.** Tested in live sessions: set-up, new workstream, status, close. Not yet fully verified: splitting a workstream, replacing a long session, cleaning up many sessions. The new project-rule update procedure has passed structure and manifest checks but has not been tested in a live conversation. Details: [docs/design-notes.md](docs/design-notes.md).
 
 ## What is this?
 
