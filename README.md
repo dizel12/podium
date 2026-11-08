@@ -2,11 +2,9 @@
 
 <p align="center"><b>English</b> | <a href="README.ko.md">한국어</a></p>
 
-<p align="center">
-  <img src="docs/assets/banner.png" alt="podium: a penguin conductor on a podium raises a baton over a flock of penguins, with small session cards floating above them" width="900">
-</p>
+![podium: a penguin conductor on a podium raises a baton over a flock of penguins, with small session cards floating above them](docs/assets/banner.png)
 
-**Version 0.2.0, early.** Tested in live sessions: set-up, new workstream, status, close. Not yet fully verified: splitting a workstream, replacing a long session, cleaning up many sessions. The new project-rule update procedure has passed structure and manifest checks but has not been tested in a live conversation. Details: [docs/design-notes.md](docs/design-notes.md).
+**Version 0.2.1, early.** Tested in live sessions: set-up, new workstream, status, close. Not yet fully verified: splitting a workstream, replacing a long session, cleaning up many sessions. The new project-rule update procedure has passed structure and manifest checks but has not been tested in a live conversation. Details: [docs/design-notes.md](docs/design-notes.md).
 
 ## What is this?
 
@@ -14,9 +12,7 @@ podium is a Claude Code plugin that keeps many sessions from piling up in one fl
 You tell Claude a task in plain words. podium turns each task into its own workstream: one sidebar section, one file that holds what is going on, and one lead session. When a workstream gets big, the lead session can take on task sessions; when it is small, it stays one session.
 Because the state lives in files and not in the chat, you can close any session and a new one picks up where it stopped.
 
-<p align="center">
-  <img src="docs/assets/concept.png" alt="Before and after: on the left, scattered penguins with tangled session cards; on the right, the same penguins lined up in three groups under a penguin conductor on a podium" width="800">
-</p>
+![Before and after: on the left, scattered penguins with tangled session cards; on the right, the same penguins lined up in three groups under a penguin conductor on a podium](docs/assets/concept.png)
 
 ### The few terms you need
 
@@ -140,3 +136,7 @@ Everyone taking part follows the [Code of Conduct](CODE_OF_CONDUCT.md). Security
 ## License
 
 MIT. Contributions are accepted under the same license; see [LICENSE](LICENSE).
+
+## Privacy
+
+[Privacy and data handling](docs/privacy.md) explains workspace records, host processing, retention, and contact options. podium operates no separate backend or telemetry service.

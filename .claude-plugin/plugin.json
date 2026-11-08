@@ -1,8 +1,12 @@
 {
   "name": "podium",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": {
     "name": "stlahxm"
   },
-  "description": "Run many Claude Code sessions without losing track: one workstream per area, one session per task, context kept in files."
+  "description": "Run many Claude Code sessions without losing track: one workstream per area, one session per task, context kept in files.",
+  "homepage": "https://github.com/stlahxm/podium",
+  "repository": "https://github.com/stlahxm/podium",
+  "license": "MIT",
+  "privacyPolicyUrl": "https://github.com/stlahxm/podium/blob/v0.2.1/docs/privacy.md"
 }
