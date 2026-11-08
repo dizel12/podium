@@ -10,8 +10,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/stlahxm/podium.git",
-        "ref": "v0.2.1",
-        "sha": "c9f912463261ca267f143480201455f5138399b7"
+        "ref": "v0.2.2",
+        "sha": "803ea251705931db160700287f003036e2f2527f"
       },
       "description": "One sidebar section per workstream, one session per task, context kept in files."
     }
