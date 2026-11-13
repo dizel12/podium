@@ -23,7 +23,7 @@ A new task, sorting sessions, status, closing work, or replacing a long session:
 
 ### Reporting and approval
 - Report upward only when done, blocked, or a decision is needed. Progress goes in the workstream file.
-- Do not reply to a session in another workstream that sent you a request: record the result in your workstream file and report to the main session. Reply directly only if the request says "reply needed".
+- For a request from another workstream, record the result in your workstream file. Do not reply to the session that asked, and do not report to main unless done with a deliverable, blocked, or a decision is needed. Reply in one line only if the request says "reply needed". Reading another workstream's file is allowed; editing is not.
 - Record every task session you open (name, ID, role, state) and where each result lives in the workstream file, not only in a notes folder. A task session never replaces itself; ask the lead.
 - When the user describes work that looks like it will span several sessions, offer once to make it a workstream. If they decline, do not ask again for that work.
 - When the work looks finished, ask the user whether to close the workstream.

@@ -45,7 +45,7 @@ Do not let two sessions edit the same file at the same time.
 
 ### Reporting
 - A session reports upward only when it is done, blocked, or needs a decision. Progress goes in the workstream file.
-- A session that handled a request from another workstream does not reply to the session that asked. It records the result in its own workstream file and reports to the main session. It replies directly only when the request says "reply needed".
+- A session that handled a request from another workstream records the result in its own workstream file. It does not reply to the session that asked, and it does not report to the main session unless it is done with a deliverable, blocked, or needs a decision. It replies directly, in one line, only when the request says "reply needed". The requesting side reads the other workstream's file when it needs the result; reading is allowed, only editing is not.
 - The main session passes on one or two lines per workstream and does not act on its own after a report.
 
 ### Approval
